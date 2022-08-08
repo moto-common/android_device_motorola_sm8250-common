@@ -13,7 +13,7 @@
 # limitations under the License.
 
 # Platform
-PRODUCT_PLATFORM := holi
+PRODUCT_PLATFORM := kona
 
 TARGET_ARCH_VARIANT := armv8-2a
 TARGET_CPU_ABI := arm64-v8a
@@ -66,9 +66,6 @@ BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX_LOCATION := 1
 
 # This target has no recovery partition
 BOARD_USES_RECOVERY_AS_BOOT := true
-
-# Audio
-AUDIO_FEATURE_ENABLED_GKI := true
 
 # VINTF
 DEVICE_MANIFEST_FILE += $(PLATFORM_COMMON_PATH)/vintf/manifest.xml

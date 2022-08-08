@@ -13,16 +13,16 @@
 # limitations under the License.
 
 # Platform Path
-PLATFORM_COMMON_PATH := device/motorola/sm4350-common
+PLATFORM_COMMON_PATH := device/motorola/sm8250-common
 
 # Platform
-HOLI := holi
-KERNEL_VERSION := 5.4
+KONA := kona
+KERNEL_VERSION := 4.19
 PRODUCT_PLATFORM_MOT := true
-TARGET_BOARD_PLATFORM := $(HOLI)
+TARGET_BOARD_PLATFORM := $(KONA)
 
 # Kernel Headers
-PRODUCT_VENDOR_KERNEL_HEADERS := device/motorola/sm4350-common-kernel/kernel-headers
+PRODUCT_VENDOR_KERNEL_HEADERS := device/motorola/sm4250-common-kernel/kernel-headers
 
 # Rootdir Path
 MOTOROLA_ROOT := $(PLATFORM_COMMON_PATH)/rootdir
@@ -61,8 +61,8 @@ PRODUCT_PACKAGES += \
     update_engine_client \
     update_engine_sideload \
     update_verifier \
-    bootctrl.sm4350-common \
-    bootctrl.sm4350-common.recovery
+    bootctrl.sm8250-common \
+    bootctrl.sm8250-common.recovery
 
 AB_OTA_PARTITIONS += \
     boot \
@@ -133,10 +133,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     ueventd
 
-# GPS
-PRODUCT_PACKAGES += \
-    gps.holi
-
 # Graphics
 PRODUCT_COPY_FILES += \
     $(MOTOROLA_ROOT)/vendor/etc/display/DPU660.xml:$(TARGET_COPY_OUT_VENDOR)/etc/display/DPU660.xml \
@@ -177,4 +173,4 @@ PRODUCT_PACKAGES += \
 
 $(call inherit-product, device/motorola/common/common.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
-$(call inherit-product, vendor/motorola/sm4350-common/sm4350-common-vendor.mk)
+$(call inherit-product, vendor/motorola/sm8250-common/sm8250-common-vendor.mk)

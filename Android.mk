@@ -1,4 +1,4 @@
-ifeq (holi,$(PRODUCT_PLATFORM))
+ifeq (sm8250,$(PRODUCT_PLATFORM))
 
 LOCAL_PATH := $(call my-dir)
 
