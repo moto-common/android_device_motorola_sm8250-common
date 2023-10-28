@@ -13,11 +13,11 @@
 # limitations under the License.
 
 # Platform Path
-PLATFORM_COMMON_PATH := device/motorola/sm4250-common
+PLATFORM_COMMON_PATH := device/motorola/sm8250-common
 
 # Platform
-BENGAL := bengal
-TARGET_BOARD_PLATFORM := $(BENGAL)
+KONA := kona
+TARGET_BOARD_PLATFORM := $(KONA)
 TARGET_KERNEL_VERSION := 4.19
 PRODUCT_PLATFORM_MOT := true
 PRODUCT_USES_QCOM_HARDWARE := true
@@ -30,13 +30,21 @@ AB_OTA_PARTITIONS += \
     boot \
     dtbo \
     product \
+    system_ext \
     system \
     vendor \
     vbmeta \
-    vbmeta_system
+    vbmeta_system \
+    vendor_boot
+
+# Device characteristics
+DEVICE_CHARACTERISTICS += ufs
 
 # Dynamic Partitions
 TARGET_USES_DYNAMIC_PARTITIONS := true
+
+# ESoC
+TARGET_USES_ESOC := true
 
 # Fingerprint
 TARGET_USES_FPC_FINGERPRINT := true
@@ -50,11 +58,11 @@ PRODUCT_USES_PIXEL_POWER_HAL := true
 
 # QCOM Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.vendor.qcom.bluetooth.soc=cherokee
+    persist.vendor.qcom.bluetooth.soc=hastings
 
 # Telephony
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.telephony.default_network=10,10
 
 $(call inherit-product, device/motorola/common/common.mk)
-$(call inherit-product, vendor/motorola/sm4250-common/sm4250-common-vendor.mk)
+$(call inherit-product, vendor/motorola/sm8250-common/sm8250-common-vendor.mk)

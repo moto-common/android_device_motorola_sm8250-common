@@ -1,4 +1,4 @@
-ifeq (bengal,$(PRODUCT_PLATFORM))
+ifeq (kona,$(PRODUCT_PLATFORM))
 
 LOCAL_PATH := $(call my-dir)
 
