@@ -30,7 +30,7 @@ BOARD_BOOT_HEADER_VERSION := 3
 
 # Kernel
 BOARD_KERNEL_CMDLINE += androidboot.usbcontroller=a600000.dwc3
-BOARD_KERNEL_IMAGE_NAME := Image
+BOARD_KERNEL_IMAGE_NAME := Image.gz
 
 # Partitions
 TARGET_COPY_OUT_SYSTEM_EXT := system_ext
